@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.tugasakhir.R;
 
 public class DetailClub extends AppCompatActivity {
@@ -33,14 +34,14 @@ public class DetailClub extends AppCompatActivity {
     private void getIncomingIntent() {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            int getLogo = bundle.getInt("logo");
+            String getLogo = bundle.getString("logo");
             String getNama = bundle.getString("name");
             String getTahun = bundle.getString("tahun");
             String getStadium = bundle.getString("stadium");
             String getLiga = bundle.getString("liga");
             String getWebsite = bundle.getString("website");
 
-            ivLogo.setImageResource(getLogo);
+            Glide.with(getApplicationContext()).load(getLogo).into(ivLogo);
             tvNama.setText(getNama);
             tvTahun.setText(getTahun);
             tvStadium.setText(getStadium);

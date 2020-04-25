@@ -24,8 +24,6 @@ public class ClubSportAdapter extends RecyclerView.Adapter<ClubSportAdapter.View
     private ArrayList<ClubTeamsItem> clubTeamsItems = new ArrayList<>();
     private Context context;
 
-    //private static String BASE_IMAGE_URL ="https://www.thesportsdb.com/images/media/team/badge/";
-
     public ClubSportAdapter(Context context) {
         this.context = context;
     }
