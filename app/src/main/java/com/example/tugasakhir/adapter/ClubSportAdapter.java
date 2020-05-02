@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +35,10 @@ public class ClubSportAdapter extends RecyclerView.Adapter<ClubSportAdapter.View
         notifyDataSetChanged();
     }
 
+    public ArrayList<ClubTeamsItem> getClubTeamsItems() {
+        return clubTeamsItems;
+    }
+
     @NonNull
     @Override
     public ClubSportAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -58,6 +63,18 @@ public class ClubSportAdapter extends RecyclerView.Adapter<ClubSportAdapter.View
                 context.startActivity(intent);
             }
         });
+        holder.btn_Share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, getClubTeamsItems().get(position).getStrTeam());
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                context.startActivity(shareIntent);
+            }
+        });
     }
 
     @Override
@@ -69,11 +86,13 @@ public class ClubSportAdapter extends RecyclerView.Adapter<ClubSportAdapter.View
         ImageView ivThumb;
         TextView tvTitle;
         CardView cvItem;
+        Button btn_Share;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cvItem = itemView.findViewById(R.id.itemlist_cv);
             ivThumb = itemView.findViewById(R.id.itemlist_iv_thumbnail);
             tvTitle = itemView.findViewById(R.id.itemlist_tv_title);
+            btn_Share = itemView.findViewById(R.id.itemlist_share);
         }
     }
 }
