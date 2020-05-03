@@ -58,6 +58,14 @@ Following the 2003–04 season, Arsenal acquired the nickname 'The Invincibles' 
     The record of most points in a season is 100 by Manchester City in 2017–18."
                 android:textSize="15dp" />
 
+            <Button
+                android:id="@+id/btn_bestplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BEST PLAYER"
+                android:layout_marginTop="20dp"
+                android:onClick="pindah"/>
+
             <TextView
                 android:id="@+id/tv_website_liga"
                 android:layout_width="match_parent"

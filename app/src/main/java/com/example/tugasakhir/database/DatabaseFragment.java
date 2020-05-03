@@ -12,10 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tugasakhir.R;
 
-public class MainActivity extends AppCompatActivity {
+public class DatabaseFragment extends AppCompatActivity {
     private AppDatabase appDatabase;
     private Button btn_lihat, btn_Simpan;
     private EditText nama, tahun, tim, posisi, namaNeg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

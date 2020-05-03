@@ -2,12 +2,12 @@ package com.example.tugasakhir.view.fragment;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.tugasakhir.R;
 
@@ -17,6 +17,7 @@ import com.example.tugasakhir.R;
  */
 public class HomeFragment extends Fragment {
 
+    Button buttonBest;
 
     public HomeFragment() {
         // Required empty public constructor

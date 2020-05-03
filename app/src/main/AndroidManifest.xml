@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".database.ReadActivity"></activity>
         <activity android:name=".view.activity.DetailClub" />
-        <activity android:name=".database.DatabaseActivity" />
+        <activity android:name=".database.DatabaseFragment" />
         <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
